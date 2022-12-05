@@ -18,7 +18,6 @@ import javax.inject.Singleton
         UseCaseModule::class]
 )
 interface AppComponent {
-
     fun movieSubComponent(): MovieSubComponent.Factory
     fun tvSubComponent(): TvShowSubComponent.Factory
     fun artistSubComponent(): ArtistSubComponent.Factory

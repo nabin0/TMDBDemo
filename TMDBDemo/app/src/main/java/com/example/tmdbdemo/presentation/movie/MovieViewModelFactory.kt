@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.tmdbdemo.domain.usecase.GetMoviesUseCase
 import com.example.tmdbdemo.domain.usecase.UpdateMoviesUseCase
 
+@Suppress("UNCHECKED_CAST")
 class MovieViewModelFactory(
     private val getMoviesUseCase: GetMoviesUseCase,
     private val updateMoviesUseCase: UpdateMoviesUseCase

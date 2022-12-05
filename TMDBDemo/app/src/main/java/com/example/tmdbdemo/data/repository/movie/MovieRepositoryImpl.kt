@@ -13,11 +13,11 @@ class MovieRepositoryImpl(
     private val movieLocalDataSource: MovieLocalDataSource,
     private val movieCacheDataSource: MovieCacheDataSource
 ) : MovieRepository {
-    override suspend fun getMovies(): List<Movie>? {
+    override suspend fun getMovies(): List<Movie> {
         return getMoviesFromCache()
     }
 
-    override suspend fun updateMovies(): List<Movie>? {
+    override suspend fun updateMovies(): List<Movie> {
         val newMovieList = getMoviesFromAPI()
         movieLocalDataSource.deleteAllMovies()
         movieLocalDataSource.saveMovies(newMovieList)
@@ -25,7 +25,7 @@ class MovieRepositoryImpl(
         return newMovieList
     }
 
-    suspend fun getMoviesFromAPI(): List<Movie> {
+    private suspend fun getMoviesFromAPI(): List<Movie> {
         lateinit var movieList: List<Movie>
         try {
             // TODO:: Check active internet connection
@@ -40,7 +40,7 @@ class MovieRepositoryImpl(
         return movieList
     }
 
-    suspend fun getMoviesFromDB(): List<Movie> {
+    private suspend fun getMoviesFromDB(): List<Movie> {
         lateinit var movieList: List<Movie>
         try {
             movieList = movieLocalDataSource.getMovies()
@@ -56,7 +56,7 @@ class MovieRepositoryImpl(
         return movieList
     }
 
-    suspend fun getMoviesFromCache(): List<Movie> {
+    private suspend fun getMoviesFromCache(): List<Movie> {
         lateinit var movieList: List<Movie>
         try {
             movieList = movieCacheDataSource.getMovies()
