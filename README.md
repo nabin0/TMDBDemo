@@ -9,5 +9,5 @@ This is based on the android MVVM clean architecture and following libraries and
 
 ## Screenshots
 
-<img src="https://i.imgur.com/uSyrbZw.jpg" width="280px">
-<img src="https://i.imgur.com/Jinm6vq.jpg" width="280px">
+<img src="https://i.imgur.com/uSyrbZw.jpg" width="220px">
+<img src="https://i.imgur.com/Jinm6vq.jpg" width="220px">
